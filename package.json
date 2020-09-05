@@ -1,0 +1,44 @@
+{
+  "name": "FServices",
+  "version": "6.0.0-alpha.25",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "run:android": "react-native run-android",
+    "run:ios": "react-native run-ios --simulator=\"iPhone X\"",
+    "build:apk": "cd android && ./gradlew assembleRelease",
+    "test": "jest",
+    "prepare": "patch-package"
+  },
+  "dependencies": {
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-native-firebase/admob": "^7.6.2",
+    "@react-native-firebase/app": "^8.4.1",
+    "@react-native-firebase/firestore": "^7.8.0",
+    "@react-navigation/native": "^5.7.3",
+    "@react-navigation/stack": "^5.9.0",
+    "react": "^16.13.1",
+    "react-native": "^0.63.2",
+    "react-native-gesture-handler": "^1.8.0",
+    "react-native-reanimated": "^1.13.0",
+    "react-native-safe-area-context": "^3.1.7",
+    "react-native-screens": "^2.10.1",
+    "react-native-tags": "^2.1.0",
+    "react-native-vector-icons": "^7.0.0",
+    "styled-components": "^5.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/runtime": "^7.3.1",
+    "@react-native-community/cli": "2.0.0-alpha.23",
+    "@react-native-community/eslint-config": "^0.0.3",
+    "babel-jest": "^24.1.0",
+    "jest": "^24.1.0",
+    "metro-react-native-babel-preset": "^0.51.1",
+    "patch-package": "^6.1.0",
+    "react-test-renderer": "16.8.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

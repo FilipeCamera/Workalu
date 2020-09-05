@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "205988719503",
+    "firebase_url": "https://fservices-c6060.firebaseio.com",
+    "project_id": "fservices-c6060",
+    "storage_bucket": "fservices-c6060.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:205988719503:android:459e9d30805c311192f9fa",
+        "android_client_info": {
+          "package_name": "com.flcamera.fservices"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "205988719503-mbfl9lj60o4rsn7ide07emb0a3gkoih1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLNDmhNjfXassCmlsjkm2jN0bkmUIVE84"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "205988719503-mbfl9lj60o4rsn7ide07emb0a3gkoih1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
