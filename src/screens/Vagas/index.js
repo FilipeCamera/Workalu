@@ -13,9 +13,6 @@ import {
   CardBoxName,
   CardName,
   CardNameDesc,
-  CardBoxPreco,
-  PrecoTitle,
-  PrecoDesc,
   CardBoxLocation,
   LocationTitle,
   LocationDesc,
@@ -26,9 +23,12 @@ import {
   TextWhats,
   BoxTagsFilter,
   ShowIndicator,
+  CardDesc,
+  DescTitle,
+  Desc,
 } from './styles';
 
-import ModalFilter from '../../components/ModalFilter';
+import ModalFilterVaga from '../../components/ModalFilterVaga';
 
 import firestore from '@react-native-firebase/firestore';
 
@@ -40,14 +40,11 @@ import admob, {
   AdEventType,
 } from '@react-native-firebase/admob';
 
-import { Linking } from 'react-native';
-
 import Icon from 'react-native-vector-icons/AntDesign';
-import Icon2 from 'react-native-vector-icons/FontAwesome';
 
 import Header from '../../components/Header';
 
-export default function Servicos() {
+export default function Vagas() {
   const [modalVisible, setModalVisible] = useState(false);
   const [categoria, setCategoria] = useState('');
   const [uf, setUf] = useState('');
@@ -63,7 +60,7 @@ export default function Servicos() {
     }
   );
 
-  const doc = firestore().collection('servicos');
+  const doc = firestore().collection('vagas');
 
   useEffect(() => {
     interstitial.load();
@@ -79,11 +76,10 @@ export default function Servicos() {
           const {
             categoria,
             nome,
-            nomeServico,
-            whatsapp,
+            nomeVaga,
+            descVaga,
+            email,
             tagsData,
-            valorInicial,
-            valorFinal,
             cidade,
             uf,
           } = doc.data();
@@ -91,11 +87,10 @@ export default function Servicos() {
             id: doc.id,
             categoria,
             nome,
-            nomeServico,
-            whatsapp,
+            nomeVaga,
+            descVaga,
+            email,
             tagsData,
-            valorInicial,
-            valorFinal,
             cidade,
             uf,
           });
@@ -150,7 +145,7 @@ export default function Servicos() {
 
   return (
     <Container>
-      <ModalFilter
+      <ModalFilterVaga
         categoria={categoria}
         setCategoria={setCategoria}
         uf={uf}
@@ -212,23 +207,21 @@ export default function Servicos() {
           dataFilter.map((item, index) => {
             return (
               <BoxCard key={index}>
-                <CardTitle>{item.nomeServico}</CardTitle>
+                <CardTitle>{item.nomeVaga}</CardTitle>
                 <CardBoxName>
-                  <CardName>Nome:</CardName>
+                  <CardName>Empresa/Loja:</CardName>
                   <CardNameDesc>{item.nome}</CardNameDesc>
                 </CardBoxName>
-                <CardBoxPreco>
-                  <PrecoTitle>Valor do serviço:</PrecoTitle>
-                  <PrecoDesc>
-                    R${item.valorInicial} - R${item.valorFinal}
-                  </PrecoDesc>
-                </CardBoxPreco>
                 <CardBoxLocation>
                   <LocationTitle>Localização:</LocationTitle>
                   <LocationDesc>
                     {item.cidade}, {item.uf}
                   </LocationDesc>
                 </CardBoxLocation>
+                <CardDesc>
+                  <DescTitle>Descrição:</DescTitle>
+                  <Desc>{item.descVaga}</Desc>
+                </CardDesc>
                 <CardBoxTags>
                   {item.tagsData.map((item, index) => {
                     return (
@@ -238,13 +231,8 @@ export default function Servicos() {
                     );
                   })}
                 </CardBoxTags>
-                <ButtonWhats
-                  onPress={() => {
-                    Linking.openURL(`whatsapp://send?phone=55${item.whatsapp}`);
-                  }}
-                >
-                  <Icon2 name="whatsapp" size={25} color="#FFF" />
-                  <TextWhats>Chamar no Whatsapp</TextWhats>
+                <ButtonWhats onPress={() => {}}>
+                  <TextWhats>Estou Interessado</TextWhats>
                 </ButtonWhats>
               </BoxCard>
             );

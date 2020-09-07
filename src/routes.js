@@ -6,8 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './screens/Home';
 import Cadastrar from './screens/Cadastrar';
 import Servicos from './screens/Servicos';
-
-import LogoIcon from './assets/logoFServices.svg';
+import Vagas from './screens/Vagas';
 
 const Stack = createStackNavigator();
 
@@ -33,6 +32,11 @@ export default function Routes() {
           options={{
             headerShown: false,
           }}
+        />
+        <Stack.Screen
+          name="Vagas"
+          component={Vagas}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>

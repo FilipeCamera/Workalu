@@ -14,7 +14,7 @@ import {
 
 import { Picker } from '@react-native-community/picker';
 
-export default function ModalFilter({
+export default function ModalFilterVaga({
   categoria,
   uf,
   endereco,
@@ -40,28 +40,43 @@ export default function ModalFilter({
           onValueChange={(itemValue, itemIndex) => setCategoria(itemValue)}
         >
           <Picker.Item label="Todos" value="" />
+          <Picker.Item label="Administração" value="Administração" />
+          <Picker.Item label="Comercial e Vendas" value="Comercial e Vendas" />
+          <Picker.Item label="Comércio Exterior" value="Comércio Exterior" />
+          <Picker.Item label="Educação" value="Educação" />
+          <Picker.Item label="Financeira" value="Financeira" />
           <Picker.Item
-            label="Design, Fotografia e AudioVisual"
-            value="Design, Fotografia e AudioVisual"
+            label="Hotelaria e Turismo"
+            value="Hotelaria e Turismo"
+          />
+          <Picker.Item label="Informática" value="Informática" />
+          <Picker.Item label="Saúde" value="Saúde" />
+          <Picker.Item label="Suprimentos" value="Suprimentos" />
+          <Picker.Item
+            label="Agricultura, Pecuária e Veterinária"
+            value="Agricultura, Pecuária e Veterinária"
           />
           <Picker.Item
-            label="Engenharia e Arquitetura"
-            value="Engenharia e Arquitetura"
+            label="Artes, Arquitetura e Design"
+            value="Artes, Arquitetura e Design"
           />
-          <Picker.Item label="Educação e Idiomas" value="Educação e Idiomas" />
-          <Picker.Item label="Moda e Beleza" value="Moda e Beleza" />
           <Picker.Item
-            label="Serviços Domésticos"
-            value="Serviços Domésticos"
+            label="Comunicação - Marketing"
+            value="Comunicação - Marketing"
           />
-          <Picker.Item label="Serviços Locais" value="Serviços Locais" />
-          <Picker.Item label="Transporte e Frete" value="Transporte e Frete" />
-
           <Picker.Item
-            label="Web, Mobile e Software"
-            value="Web, Mobile e Software"
+            label="Agricultura, Pecuária e Veterinária"
+            value="Agricultura, Pecuária e Veterinária"
           />
-          <Picker.Item label="Outros" value="Outros" />
+          <Picker.Item label="Engenharia" value="Engenharia" />
+          <Picker.Item label="Industrial" value="Industrial" />
+          <Picker.Item label="Jurídica" value="Jurídica" />
+          <Picker.Item label="Técnica" value="Técnica" />
+          <Picker.Item
+            label="Telemarketing - Telecomunicações"
+            value="Telemarketing - Telecomunicações"
+          />
+          <Picker.Item label="Serviços Sociais" value="Serviços Sociais" />
         </Picker>
         <BoxEndereco>
           <InputEndereco

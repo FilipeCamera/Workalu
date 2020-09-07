@@ -58,7 +58,7 @@ export default function Home() {
             </HelpBox>
             <ServiceText>Pesquisar por serviços e freelancers</ServiceText>
           </ButtonService>
-          <ButtonEmprego onPress={() => {}}>
+          <ButtonEmprego onPress={() => navigation.navigate('Vagas')}>
             <HelpBox>
               <Team />
             </HelpBox>
