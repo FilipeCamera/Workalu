@@ -3,6 +3,11 @@ import React, { useState, useEffect } from 'react';
 import {
   Container,
   Title,
+  BoxButton,
+  ButtonServico,
+  ServicoText,
+  ButtonVaga,
+  VagaText,
   Label,
   Categoria,
   Input,
@@ -24,6 +29,7 @@ import Tags from 'react-native-tags';
 import firestore from '@react-native-firebase/firestore';
 
 import ModalCadastro from '../../components/ModalCadastro';
+import Header from '../../components/Header';
 
 export default function Cadastrar() {
   const [categoria, setCategoria] = useState('');
@@ -37,6 +43,7 @@ export default function Cadastrar() {
   const [cidade, setCidade] = useState('');
   const [visible, setVisible] = useState(false);
   const [completeRegister, setCompleteRegister] = useState(false);
+  const [selected, setSelect] = useState(true);
   const doc = firestore().collection('servicos');
 
   async function addService() {
@@ -50,8 +57,8 @@ export default function Cadastrar() {
       valorFinal: valorFinal,
       cidade: cidade,
       uf: uf,
-      createdAt: firestore.FieldValue.serverTimestamp()
-    })
+      createdAt: firestore.FieldValue.serverTimestamp(),
+    });
     setCompleteRegister(true);
   }
   useEffect(() => {
@@ -75,6 +82,7 @@ export default function Cadastrar() {
       }}
       showsVerticalScrollIndicator={false}
     >
+      <Header />
       <ModalCadastro
         visible={visible}
         setVisible={setVisible}
@@ -82,6 +90,24 @@ export default function Cadastrar() {
         setCompleteRegister={setCompleteRegister}
       />
       <Title>Cadastrar</Title>
+      <BoxButton>
+        <ButtonServico
+          selected={selected}
+          onPress={() => {
+            setSelect(true);
+          }}
+        >
+          <ServicoText selected={selected}>Serviço</ServicoText>
+        </ButtonServico>
+        <ButtonVaga
+          selected={!selected}
+          onPress={() => {
+            setSelect(false);
+          }}
+        >
+          <VagaText selected={!selected}>Vaga de emprego</VagaText>
+        </ButtonVaga>
+      </BoxButton>
       <Label>Categoria:</Label>
       <Categoria
         selectedValue={categoria}

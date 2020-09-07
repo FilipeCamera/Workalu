@@ -7,6 +7,8 @@ import Home from './screens/Home';
 import Cadastrar from './screens/Cadastrar';
 import Servicos from './screens/Servicos';
 
+import LogoIcon from './assets/logoFServices.svg';
+
 const Stack = createStackNavigator();
 
 export default function Routes() {
@@ -22,26 +24,14 @@ export default function Routes() {
           name="Cadastrar"
           component={Cadastrar}
           options={{
-            headerTitle: 'FServices',
-            headerTitleAlign: 'center',
-            headerTitleStyle: {fontFamily: 'Cairo-Bold', color: '#416CD9' },
-            headerStyle: { //elevation: 0 
-            },
-            headerLeft: false,
+            headerShown: false,
           }}
         />
         <Stack.Screen
           name="Servicos"
           component={Servicos}
           options={{
-            title: 'FServices',
-            headerStyle: {
-              backgroundColor: '#416CD9',
-              //elevation: 0,
-            },
-            headerTitleAlign: 'center',
-            headerTitleStyle: {fontFamily: 'Cairo-Bold', color: '#FFF' },
-            headerLeft: false,
+            headerShown: false,
           }}
         />
       </Stack.Navigator>

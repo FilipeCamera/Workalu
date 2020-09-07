@@ -8,12 +8,18 @@ export const Scroll = styled.ScrollView``;
 
 export const BannerView = styled.View``;
 
-export const SearchBar = styled.TextInput`
+export const SearchBar = styled.View`
   height: 40px;
   width: 80%;
   background: #f2f2f2;
-  border-radius: 20px;
+  border-radius: 5px;
   border: 1px solid #c4c4c4;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const Search = styled.TextInput`
+  width: 80%;
   padding: 5px 0px 5px 15px;
   font-family: 'Cairo-Regular';
   font-size: 15px;
@@ -108,7 +114,7 @@ export const LocationDesc = styled.Text`
 `;
 
 export const BoxTags = styled.View`
-  background: #666666;
+  background: #155766;
   border-radius: 5px;
   padding: 5px;
   margin-right: 5px;
@@ -131,7 +137,7 @@ export const ButtonWhats = styled.TouchableOpacity`
   height: 46px;
   width: 90%;
   border-radius: 10px;
-  background: #4a992e;
+  background: #1F8299;
   margin: 5px 0 10px;
 `;
 

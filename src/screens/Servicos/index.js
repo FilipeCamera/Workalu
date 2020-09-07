@@ -6,6 +6,7 @@ import {
   BannerView,
   BoxSearchFilter,
   SearchBar,
+  Search,
   ButtonFilter,
   BoxCard,
   CardTitle,
@@ -31,12 +32,16 @@ import ModalFilter from '../../components/ModalFilter';
 
 import firestore from '@react-native-firebase/firestore';
 
-import {BannerAd, BannerAdSize } from '@react-native-firebase/admob';
+import { BannerAd, BannerAdSize } from '@react-native-firebase/admob';
 
 import { Linking } from 'react-native';
 
 import Icon from 'react-native-vector-icons/AntDesign';
 import Icon2 from 'react-native-vector-icons/FontAwesome';
+
+import Header from '../../components/Header';
+
+import admob, { MaxAdContentRating } from '@react-native-firebase/admob';
 
 export default function Servicos() {
   const [modalVisible, setModalVisible] = useState(false);
@@ -46,8 +51,6 @@ export default function Servicos() {
   const [textSearch, setTextSearch] = useState('');
   const [data, setData] = useState([]);
   const [dataFilter, setDataFilter] = useState([]);
-
-  const adUnitId = 'ca-app-pub-4288571417280592/1018526521';
 
   const doc = firestore().collection('servicos');
 
@@ -85,6 +88,13 @@ export default function Servicos() {
       });
     }
     LoadServico();
+    admob()
+      .setRequestConfiguration({
+        maxAdContentRating: MaxAdContentRating.PG,
+        tagForChildDirectedTreatment: true,
+        tagForUnderAgeOfConsent: true,
+      })
+      .then(() => {});
   }, []);
 
   function search(e) {
@@ -140,20 +150,29 @@ export default function Servicos() {
         }}
         showsVerticalScrollIndicator={false}
       >
+        <Header />
         <BoxSearchFilter>
-          <SearchBar
-            value={textSearch}
-            placeholder="Pesquisar..."
-            onChangeText={(e) => {
-              search(e);
-              setTextSearch(e);
-            }}
-            clearTextOnFocus={true}
-            onFocus={() => {
-              setTextSearch('');
-              search('');
-            }}
-          />
+          <SearchBar>
+            <Icon
+              style={{ marginLeft: 5 }}
+              name="search1"
+              size={18}
+              color="#999999"
+            />
+            <Search
+              value={textSearch}
+              placeholder="Pesquisar..."
+              onChangeText={(e) => {
+                search(e);
+                setTextSearch(e);
+              }}
+              clearTextOnFocus={true}
+              onFocus={() => {
+                setTextSearch('');
+                search('');
+              }}
+            />
+          </SearchBar>
           <ButtonFilter onPress={() => setModalVisible(true)}>
             <Icon name="filter" size={20} color="#666666" />
           </ButtonFilter>
@@ -216,7 +235,7 @@ export default function Servicos() {
       </Scroll>
       <BannerView>
         <BannerAd
-          unitId={adUnitId}
+          unitId="ca-app-pub-4288571417280592/1018526521"
           size={BannerAdSize.FULL_BANNER}
           requestOptions={{
             requestNonPersonalizedAdsOnly: true,
