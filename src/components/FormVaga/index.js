@@ -75,7 +75,8 @@ export default function FormVaga() {
         style={{
           height: 60,
           width: '90%',
-          color: '#808080',
+          color: '#0A2B33',
+          backgroundColor: '#C3DFE5',
         }}
         selectedValue={categoria}
         mode="dropdown"
@@ -160,7 +161,7 @@ export default function FormVaga() {
           )
         }
         containerStyle={{ justifyContent: 'center' }}
-        inputStyle={{ backgroundColor: 'white' }}
+        inputStyle={{ backgroundColor: '#C3DFE5', color: '#0A2B33' }}
         renderTag={({ tag, index, onPress, deleteTagOnPress, readonly }) => (
           <ButtonTags key={`${tag}-${index}`} onPress={onPress}>
             <TextTags>{tag}</TextTags>
@@ -174,7 +175,12 @@ export default function FormVaga() {
           onChangeText={(e) => setCidade(e)}
         />
         <Picker
-          style={{ height: 60, width: '30%', color: '#808080' }}
+          style={{
+            height: 60,
+            width: '30%',
+            color: '#0A2B33',
+            backgroundColor: '#C3DFE5',
+          }}
           mode="dropdown"
           selectedValue={uf}
           onValueChange={(itemValue, itemIndex) => setUf(itemValue)}

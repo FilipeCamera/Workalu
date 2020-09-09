@@ -13,7 +13,7 @@ export const SearchBar = styled.View`
   width: 80%;
   background: #f2f2f2;
   border-radius: 5px;
-  border: 1px solid #c4c4c4;
+  border: 1px solid #1F8299;
   flex-direction: row;
   align-items: center;
 `;
@@ -23,7 +23,7 @@ export const Search = styled.TextInput`
   padding: 5px 0px 5px 15px;
   font-family: 'Cairo-Regular';
   font-size: 15px;
-  color: #808080;
+  color: #155766;
 `;
 
 export const BoxSearchFilter = styled.View`
@@ -42,7 +42,7 @@ export const BoxCard = styled.View`
   width: 90%;
   flex-direction: column;
   align-items: center;
-  background: #f2f2f2;
+  background: #C3DFE5;
   border-radius: 10px;
   margin: 20px 0 10px;
   elevation: 1px;
@@ -51,8 +51,8 @@ export const BoxCard = styled.View`
 export const CardTitle = styled.Text`
   width: 90%;
   font-family: 'Cairo-Bold';
-  font-size: 16px;
-  color: #4d4d4d;
+  font-size: 18px;
+  color: #0A2B33;
   margin: 5px 0;
 `;
 export const CardBoxName = styled.View`
@@ -62,14 +62,16 @@ export const CardBoxName = styled.View`
 `;
 
 export const CardName = styled.Text`
-  font-family: 'Cairo-Regular';
-  font-size: 14px;
+  font-family: 'Cairo-SemiBold';
+  font-size: 15px;
+  color: #0A2B33;
 `;
 
 export const CardNameDesc = styled.Text`
-  font-family: 'Cairo-Light';
-  font-size: 14px;
+  font-family: 'Cairo-Regular';
+  font-size: 15px;
   margin-left: 5px;
+  color: #0A2B33;
 `;
 
 
@@ -88,18 +90,20 @@ export const CardBoxLocation = styled.View`
 `;
 
 export const LocationTitle = styled.Text`
-  font-family: 'Cairo-Regular';
-  font-size: 14px;
+  font-family: 'Cairo-SemiBold';
+  font-size: 15px;
+  color: #0A2B33;
 `;
 
 export const LocationDesc = styled.Text`
-  font-family: 'Cairo-Light';
-  font-size: 14px;
+  font-family: 'Cairo-Regular';
+  font-size: 15px;
   margin-left: 5px;
+  color: #0A2B33;
 `;
 
 export const BoxTags = styled.View`
-  background: #155766;
+  background: #1F8299;
   border-radius: 5px;
   padding: 5px;
   margin-right: 5px;
@@ -122,12 +126,12 @@ export const ButtonWhats = styled.TouchableOpacity`
   height: 46px;
   width: 90%;
   border-radius: 10px;
-  background: #1F8299;
+  background: #155766;
   margin: 5px 0 10px;
 `;
 
 export const TextWhats = styled.Text`
-  font-family: 'Cairo-Regular';
+  font-family: 'Cairo-SemiBold';
   font-size: 15px;
   color: #fff;
 `;
@@ -154,14 +158,15 @@ export const CardDesc = styled.View`
 `;
 
 export const DescTitle = styled.Text`
-  font-family: 'Cairo-Regular';
-  font-size: 14px;
+  font-family: 'Cairo-SemiBold';
+  font-size: 15px;
+  color: #0A2B33;
 `;
 
 export const Desc = styled.Text`
-  font-family: 'Cairo-Light';
-  font-size: 14px;
+  font-family: 'Cairo-Regular';
+  font-size: 15px;
   margin-left: 30px;
   text-align: left;
-  
+  color: #0A2B33;
 `;

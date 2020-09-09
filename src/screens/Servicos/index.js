@@ -177,7 +177,7 @@ export default function Servicos() {
               style={{ marginLeft: 5 }}
               name="search1"
               size={18}
-              color="#999999"
+              color="#1F8299"
             />
             <Search
               value={textSearch}
@@ -194,7 +194,7 @@ export default function Servicos() {
             />
           </SearchBar>
           <ButtonFilter onPress={() => setModalVisible(true)}>
-            <Icon name="filter" size={20} color="#666666" />
+            <Icon name="filter" size={22} color="#1F8299" />
           </ButtonFilter>
         </BoxSearchFilter>
         <BoxTagsFilter>
@@ -250,7 +250,7 @@ export default function Servicos() {
             );
           })
         ) : (
-          <ShowIndicator size="large" color="#416CD9" />
+          <ShowIndicator size="large" color="#1F8299" />
         )}
       </Scroll>
       <BannerView>

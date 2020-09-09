@@ -1,100 +1,107 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.ScrollView`
+  background: #0A2B33;
 `;
 
 export const Logo = styled.View`
-  width: 100%;
-  position: absolute;
-  top: 40px;
-  left: 25px;
-  elevation: 5;
-`;
-export const BoxPolygon = styled.View`
-  width: 100%;
-  elevation: 0;
+  margin: 25px 0 0 20px;
 `;
 
 export const TextLogo = styled.Text`
-  margin-top: 40px;
-  margin-left: 10px;
-  font-family: 'Cairo-Bold';
-  font-size: 26px;
+  margin-top: 10px;
+  margin-left: 30px;
+  font-family: 'Cairo-Black';
+  font-size: 24px;
+  color: #FFF;
 `;
 
 export const DescLogo = styled.Text`
-  width: 90%;
-  margin-left: 10px;
-  font-family: 'Cairo-Regular';
-  font-size: 22px;
+  width: 300px;
+  margin-left: 30px;
+  font-family: 'Cairo-SemiBold';
+  font-size: 20px;
   text-align: justify;
-`;
-
-export const BoxButton = styled.View`
-  width: 100%;
-  position: absolute;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  bottom: 90px;
-  elevation: 5;
+  color: #FFF;
 `;
 
 export const ButtonService = styled.TouchableOpacity`
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  background: #60D66A;
+  background: #1F8299;
   border-radius: 10px;
-  width: 170px;
-  height: 118px;
+  width: 290px;
+  height: 60px;
+  margin: 50px auto 25px;
 `;
 export const HelpBox = styled.View`
-  margin-top: -100px;
-  margin-bottom: 10px;
+  margin-left: -5px;
 `;
 
 export const ServiceText = styled.Text`
-  font-family: 'Cairo-SemiBold';
-  color: #1A4D08;
-  font-size: 16px;
-  width: 90%;
+  font-family: 'Cairo-Bold';
+  color: #FFF;
+  font-size: 17px;
+  width: 80%;
   text-align: center;
 `;
 
 export const ButtonEmprego = styled.TouchableOpacity`
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  background: #E44545;
+  background: #1F8299;
   border-radius: 10px;
-  width: 170px;
-  height: 118px;
+  width: 290px;
+  height: 60px;
+  margin: 25px auto 50px;
 `;
 
 export const EmpregoText = styled.Text`
-  font-family: 'Cairo-SemiBold';
+  font-family: 'Cairo-Bold';
   color: #FFF;
-  font-size: 16px;
-  width: 90%;
+  font-size: 17px;
+  width: 80%;
   text-align: center;
 `;
 
 export const ButtonCadastro = styled.TouchableOpacity`
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
   align-items: center;
   justify-content: center;
-  background: #155766;
+  background: #E44545;
   border-radius: 25px;
   width: 50px;
   height: 50px;
+  margin: 20px 0;
+  left: 80%;
 `;
 
+export const BoxCadastros = styled.View`
+  flex-direction: row;
+  margin: 20px auto;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+`;
+
+export const TextQuantCadastros = styled.Text`
+  font-family: 'Cairo-Bold';
+  font-size: 26px;
+  text-align: center;
+  color: #FFF;
+`;
+
+export const TextCadastros = styled.Text`
+  font-family: 'Cairo-SemiBold';
+  font-size: 18px;
+  color: #FFF;
+  margin-left: 10px;
+  width: 70%;
+`;
 
 export const FooterBox =  styled.View`
-  background: #1F8299;
+  background: #E44545;
   width: 100%;
-  height: 62px;
+  height: 60px;
   justify-content: center;
   align-items: center;
 `;

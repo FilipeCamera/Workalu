@@ -10,6 +10,8 @@ import {
   BoxCity,
   Button,
   ButtonText,
+  ButtonTags,
+  TextTags,
 } from './styles';
 
 import { Picker } from '@react-native-community/picker';
@@ -78,7 +80,8 @@ export default function FormServico() {
         style={{
           height: 60,
           width: '90%',
-          color: '#808080',
+          color: '#0A2B33',
+          backgroundColor: '#C3DFE5',
         }}
         selectedValue={categoria}
         mode="dropdown"
@@ -123,7 +126,7 @@ export default function FormServico() {
       />
       <Label>Tags:</Label>
       <Tags
-        style={{ width: '90%', marginTop: 5 }}
+        style={{ width: '90%',marginTop: 5 }}
         initialText=""
         textInputProps={{
           placeholder: 'Diga a sua experiência',
@@ -141,7 +144,7 @@ export default function FormServico() {
           )
         }
         containerStyle={{ justifyContent: 'center' }}
-        inputStyle={{ backgroundColor: 'white' }}
+        inputStyle={{ backgroundColor: '#C3DFE5', color: '#0A2B33' }}
         renderTag={({ tag, index, onPress, deleteTagOnPress, readonly }) => (
           <ButtonTags key={`${tag}-${index}`} onPress={onPress}>
             <TextTags>{tag}</TextTags>
@@ -170,7 +173,12 @@ export default function FormServico() {
           onChangeText={(e) => setCidade(e)}
         />
         <Picker
-          style={{ height: 60, width: '30%', color: '#808080' }}
+          style={{
+            height: 60,
+            width: '30%',
+            color: '#0A2B33',
+            backgroundColor: '#C3DFE5',
+          }}
           mode="dropdown"
           selectedValue={uf}
           onValueChange={(itemValue, itemIndex) => setUf(itemValue)}

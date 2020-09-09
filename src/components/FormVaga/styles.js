@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   width: 100%;
-  background: #fff;
+  background: #0A2B33;
   align-items: center;
 `;
 
@@ -10,52 +10,33 @@ export const Container = styled.View`
 export const Label = styled.Text`
   margin: 20px 0 5px;
   width: 90%;
-  font-family: 'Cairo-Light';
+  font-family: 'Cairo-SemiBold';
   font-size: 17px;
-  color: #666666;
+  color: #FFF;
   text-align: left;
 `;
 
 export const Input = styled.TextInput`
   width: 90%;
   height: 60px;
-  background: #f2f2f2;
-  border-radius: 5px;
-  margin: 5px 0 0;
+  background: #C3DFE5;
+  margin: 10px 0 0;
   padding-left: 10px;
-  font-family: 'Cairo-Light';
+  font-family: 'Cairo-Regular';
   font-size: 16px;
-  color: #808080;
+  color: #0A2B33;
 `;
 
 export const ButtonTags = styled.TouchableOpacity`
   margin-right: 5px;
   padding: 5px;
-  background: #808080;
+  background: #1F8299;
   border-radius: 5px;
 `;
 
 export const TextTags = styled.Text`
-  font-family: 'Cairo-Light';
+  font-family: 'Cairo-Regular';
   color: #fff;
-`;
-
-export const BoxValor = styled.View`
-  width: 90%;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 10px 0 0;
-`;
-
-export const ValorInput = styled.TextInput`
-  height: 60px;
-  width: 48%;
-  background: #f2f2f2;
-  border-radius: 5px;
-  font-family: 'Cairo-Light';
-  font-size: 16px;
-  color: #808080;
-  text-align: center;
 `;
 
 export const BoxCity = styled.View`
@@ -68,16 +49,15 @@ export const BoxCity = styled.View`
 export const CityInput = styled.TextInput`
   width: 66%;
   height: 60px;
-  background: #f2f2f2;
-  color: #808080;
-  border-radius: 5px;
-  font-family: 'Cairo-Light';
+  background: #C3DFE5;
+  color: #0A2B33;
+  font-family: 'Cairo-Regular';
   padding-left: 10px;
   font-size: 16px;
 `;
 
 export const Button = styled.TouchableOpacity`
-  background: #1F8299;
+  background: #E44545;
   width: 200px;
   height: 60px;
   border-radius: 5px;

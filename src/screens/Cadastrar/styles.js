@@ -1,13 +1,13 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.ScrollView`
-  background: #fff;
+  background: #0A2B33;
 `;
 
 export const Title = styled.Text`
   font-family: 'Cairo-Bold';
   font-size: 20px;
-  color: #666666;
+  color: #FFFFFF;
   margin: 15px 0 10px;
 `;
 

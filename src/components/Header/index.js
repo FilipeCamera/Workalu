@@ -2,7 +2,7 @@ import React from 'react'
 
 import styled from 'styled-components/native';
 
-import LogoIcon from '../../assets/logoFServices.svg';
+import LogoIcon from '../../assets/logoWhite.svg';
 
 const Container = styled.View`
   align-items: center;
