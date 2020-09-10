@@ -29,7 +29,7 @@ export const ButtonServico = styled.TouchableOpacity`
 
 export const ServicoText = styled.Text`
   font-family: 'Cairo-SemiBold';
-  font-size: 14px;
+  font-size: 15px;
   color: ${(props) => (props.selected == true ? '#F2F2F2' : '#4D4D4D')};
 `;
 
@@ -44,6 +44,6 @@ export const ButtonVaga = styled.TouchableOpacity`
 
 export const VagaText = styled.Text`
   font-family: 'Cairo-SemiBold';
-  font-size: 14px;
+  font-size: 15px;
   color: ${(props) => (props.selected == true ? '#F2F2F2' : '#4D4D4D')};
 `;

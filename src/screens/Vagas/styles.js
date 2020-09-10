@@ -2,6 +2,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   flex: 1;
+  background: #0A2B33;
 `;
 
 export const Scroll = styled.ScrollView``;
@@ -13,7 +14,6 @@ export const SearchBar = styled.View`
   width: 80%;
   background: #f2f2f2;
   border-radius: 5px;
-  border: 1px solid #1F8299;
   flex-direction: row;
   align-items: center;
 `;
@@ -126,7 +126,7 @@ export const ButtonWhats = styled.TouchableOpacity`
   height: 46px;
   width: 90%;
   border-radius: 10px;
-  background: #155766;
+  background: #CC3E3E;
   margin: 5px 0 10px;
 `;
 

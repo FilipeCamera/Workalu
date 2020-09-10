@@ -2,6 +2,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   flex: 1;
+  background: #0A2B33;
 `;
 
 export const Scroll = styled.ScrollView``;
@@ -13,7 +14,6 @@ export const SearchBar = styled.View`
   width: 80%;
   background: #f2f2f2;
   border-radius: 5px;
-  border: 1px solid #1F8299;
   flex-direction: row;
   align-items: center;
 `;
@@ -43,7 +43,7 @@ export const BoxCard = styled.View`
   flex-direction: column;
   align-items: center;
   background: #C3DFE5;
-  border-radius: 10px;
+  border-radius: 5px;
   margin: 20px 0 10px;
   elevation: 1px;
 `;
@@ -120,7 +120,7 @@ export const LocationDesc = styled.Text`
 `;
 
 export const BoxTags = styled.View`
-  background: #1F8299;
+  background: #228DA6;
   border-radius: 5px;
   padding: 5px;
   margin-right: 5px;
@@ -136,14 +136,13 @@ export const TagsTitle = styled.Text`
 `;
 
 export const ButtonWhats = styled.TouchableOpacity`
-  width: 90%;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   height: 46px;
   width: 90%;
-  border-radius: 10px;
-  background: #155766;
+  border-radius: 5px;
+  background: #CC3E3E;
   margin: 5px 0 10px;
 `;
 

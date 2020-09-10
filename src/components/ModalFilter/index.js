@@ -3,13 +3,12 @@ import React from 'react';
 import {
   Modal,
   Container,
-  Categoria,
-  Uf,
   Label,
   Button,
   ButtonText,
   BoxEndereco,
   InputEndereco,
+  BoxButton,
 } from './styles';
 
 import { Picker } from '@react-native-community/picker';
@@ -33,7 +32,8 @@ export default function ModalFilter({
           style={{
             height: 60,
             width: '90%',
-            color: '#808080',
+            color: '#0A2B33',
+            backgroundColor: '#C3DFE5',
           }}
           selectedValue={categoria}
           mode="dropdown"
@@ -72,8 +72,9 @@ export default function ModalFilter({
           <Picker
             style={{
               height: 60,
-              width: '30%',
-              color: '#808080',
+              width: '32%',
+              color: '#0A2B33',
+              backgroundColor: '#C3DFE5',
             }}
             mode="dropdown"
             selectedValue={uf}
@@ -109,22 +110,24 @@ export default function ModalFilter({
             <Picker.Item label="DF" value="DF" />
           </Picker>
         </BoxEndereco>
-        <Button
-          onPress={() => {
-            setModalVisible(false);
-            filterData(categoria, uf, endereco);
-          }}
-        >
-          <ButtonText>Ok</ButtonText>
-        </Button>
-        <Button
-          style={{ backgroundColor: '#5A5A5A', marginTop: 5 }}
-          onPress={() => {
-            setModalVisible(false);
-          }}
-        >
-          <ButtonText>Cancelar</ButtonText>
-        </Button>
+        <BoxButton>
+          <Button
+            onPress={() => {
+              setModalVisible(false);
+              filterData(categoria, uf, endereco);
+            }}
+          >
+            <ButtonText>Ok</ButtonText>
+          </Button>
+          <Button
+            style={{ backgroundColor: '#CC3E3E'}}
+            onPress={() => {
+              setModalVisible(false);
+            }}
+          >
+            <ButtonText>Cancelar</ButtonText>
+          </Button>
+        </BoxButton>
       </Container>
     </Modal>
   );

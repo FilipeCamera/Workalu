@@ -164,7 +164,7 @@ export default function Servicos() {
       <Scroll
         contentContainerStyle={{
           flexGrow: 1,
-          backgroundColor: '#FFF',
+          backgroundColor: '#0A2B33',
           alignItems: 'center',
           paddingBottom: 10,
         }}
@@ -177,7 +177,7 @@ export default function Servicos() {
               style={{ marginLeft: 5 }}
               name="search1"
               size={18}
-              color="#1F8299"
+              color="#155766"
             />
             <Search
               value={textSearch}
@@ -194,7 +194,7 @@ export default function Servicos() {
             />
           </SearchBar>
           <ButtonFilter onPress={() => setModalVisible(true)}>
-            <Icon name="filter" size={22} color="#1F8299" />
+            <Icon name="filter" size={22} color="#E44545" />
           </ButtonFilter>
         </BoxSearchFilter>
         <BoxTagsFilter>
@@ -250,7 +250,7 @@ export default function Servicos() {
             );
           })
         ) : (
-          <ShowIndicator size="large" color="#1F8299" />
+          <ShowIndicator size="large" color="#E44545" />
         )}
       </Scroll>
       <BannerView>

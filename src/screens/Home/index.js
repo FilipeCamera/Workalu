@@ -44,7 +44,10 @@ export default function Home() {
   }, []);
 
   return (
-    <Container contentContainerStyle={{ flexGrow: 1 }}>
+    <Container
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={{ flexGrow: 1 }}
+    >
       <Logo>
         <LogoIcon />
       </Logo>
@@ -53,19 +56,23 @@ export default function Home() {
         aqui você encontra profissionais qualificados, oportunidades de empregos
         e serviços.
       </DescLogo>
-      <ButtonService onPress={(e) => {
-        e.preventDefault();
-        navigation.navigate('Servicos')
-      }}>
+      <ButtonService
+        onPress={(e) => {
+          e.preventDefault();
+          navigation.navigate('Servicos');
+        }}
+      >
         <ServiceText>Pesquisar por serviços e freelancers</ServiceText>
         <HelpBox>
           <Help />
         </HelpBox>
       </ButtonService>
-      <ButtonEmprego onPress={(e) => {
-        e.preventDefault();
-        navigation.navigate('Vagas')
-      }}>
+      <ButtonEmprego
+        onPress={(e) => {
+          e.preventDefault();
+          navigation.navigate('Vagas');
+        }}
+      >
         <EmpregoText>Pesquisar por vagas de empregos</EmpregoText>
         <HelpBox>
           <Team />
@@ -73,16 +80,20 @@ export default function Home() {
       </ButtonEmprego>
       <BoxCadastros>
         <TextQuantCadastros>{totalS}</TextQuantCadastros>
-        <TextCadastros>serviços e freelancers cadastrados na nossa plataforma</TextCadastros>
+        <TextCadastros>
+          serviços e freelancers cadastrados na nossa plataforma
+        </TextCadastros>
       </BoxCadastros>
       <BoxCadastros>
         <TextQuantCadastros>{totalV}</TextQuantCadastros>
         <TextCadastros>vagas cadastrados na nossa plataforma</TextCadastros>
       </BoxCadastros>
-      <ButtonCadastro onPress={(e) => {
-        e.preventDefault();
-        navigation.navigate('Cadastrar')
-      }}>
+      <ButtonCadastro
+        onPress={(e) => {
+          e.preventDefault();
+          navigation.navigate('Cadastrar');
+        }}
+      >
         <Icon name="add" size={24} color="#FFF" />
       </ButtonCadastro>
       <FooterBox>
