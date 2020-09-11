@@ -44,8 +44,11 @@ import Icon from 'react-native-vector-icons/AntDesign';
 
 import Header from '../../components/Header';
 
+import Modal from '../../components/Modal';
+
 export default function Vagas() {
   const [modalVisible, setModalVisible] = useState(false);
+  const [visibleM, setVisibleM] = useState(false);
   const [categoria, setCategoria] = useState('');
   const [uf, setUf] = useState('');
   const [endereco, setEndereco] = useState('');
@@ -231,7 +234,8 @@ export default function Vagas() {
                     );
                   })}
                 </CardBoxTags>
-                <ButtonWhats onPress={() => {}}>
+                <ButtonWhats onPress={() => setVisibleM(true)}>
+                  <Modal visible={visibleM} setVisible={setVisibleM} email={item.email}/>
                   <TextWhats>Estou Interessado</TextWhats>
                 </ButtonWhats>
               </BoxCard>
