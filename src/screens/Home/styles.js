@@ -1,5 +1,9 @@
 import styled from 'styled-components/native';
 
+import {Dimensions} from 'react-native';
+
+const {width} = Dimensions.get('screen');
+
 export const Container = styled.ScrollView`
   background: #0A2B33;
 `;
@@ -30,7 +34,7 @@ export const ButtonService = styled.TouchableOpacity`
   align-items: center;
   background: #1F8299;
   border-radius: 10px;
-  width: 290px;
+  width: ${width > 360 ? '310' : '290'};
   height: 60px;
   margin: 50px auto 25px;
 `;
@@ -51,7 +55,7 @@ export const ButtonEmprego = styled.TouchableOpacity`
   align-items: center;
   background: #1F8299;
   border-radius: 10px;
-  width: 290px;
+  width: ${width > 360 ? '310' : '290'};
   height: 60px;
   margin: 25px auto 50px;
 `;
@@ -72,7 +76,7 @@ export const ButtonCadastro = styled.TouchableOpacity`
   width: 50px;
   height: 50px;
   margin: 20px 0;
-  left: 80%;
+  left: ${width > 360 ? '82%' : '80%'};
 `;
 
 export const BoxCadastros = styled.View`
