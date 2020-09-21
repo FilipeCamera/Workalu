@@ -106,6 +106,7 @@ export const FooterBox =  styled.View`
   background: #E44545;
   width: 100%;
   height: 60px;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 `;
@@ -114,4 +115,8 @@ export const FooterText = styled.Text`
   font-family: 'Cairo-SemiBold';
   font-size: 16px;
   color: #FFF;
+`;
+
+export const ButtonSac = styled.TouchableOpacity`
+  padding: 5px;
 `;

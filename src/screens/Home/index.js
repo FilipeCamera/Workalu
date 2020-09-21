@@ -16,6 +16,7 @@ import {
   BoxCadastros,
   TextQuantCadastros,
   TextCadastros,
+  ButtonSac,
 } from './styles';
 
 import LogoIcon from '../../assets/logoWhite.svg';
@@ -23,6 +24,7 @@ import Team from '../../assets/team.svg';
 import Help from '../../assets/help.svg';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import IconSac from 'react-native-vector-icons/AntDesign';
 
 import { useNavigation } from '@react-navigation/native';
 
@@ -97,7 +99,13 @@ export default function Home() {
         <Icon name="add" size={24} color="#FFF" />
       </ButtonCadastro>
       <FooterBox>
-        <FooterText>2020 | FServices</FooterText>
+        <FooterText>2020 | FServices |</FooterText>
+        <ButtonSac onPress={(e) => {
+          e.preventDefault();
+          navigation.navigate('Sac');
+        }}>
+          <IconSac name="customerservice" size={25} color="#0A2B33" />
+        </ButtonSac>
       </FooterBox>
     </Container>
   );

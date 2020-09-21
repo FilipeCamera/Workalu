@@ -7,6 +7,7 @@ import Home from './screens/Home';
 import Cadastrar from './screens/Cadastrar';
 import Servicos from './screens/Servicos';
 import Vagas from './screens/Vagas';
+import Sac from './screens/Sac';
 
 const Stack = createStackNavigator();
 
@@ -36,6 +37,11 @@ export default function Routes() {
         <Stack.Screen
           name="Vagas"
           component={Vagas}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Sac"
+          component={Sac}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
