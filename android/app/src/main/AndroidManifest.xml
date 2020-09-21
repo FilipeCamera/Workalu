@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.flcamera.fservices">
+  package="com.flcamera.workalu">
 
     <uses-permission android:name="android.permission.INTERNET" />
 

@@ -115,7 +115,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.flcamera.fservices"
+        applicationId "com.flcamera.workalu"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

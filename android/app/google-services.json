@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:205988719503:android:459e9d30805c311192f9fa",
+        "mobilesdk_app_id": "1:205988719503:android:37526dd551536d8392f9fa",
         "android_client_info": {
-          "package_name": "com.flcamera.fservices"
+          "package_name": "com.flcamera.workalu"
         }
       },
       "oauth_client": [

@@ -2,8 +2,8 @@ platform :ios, '10.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 require_relative '../node_modules/@react-native-firebase/app/pod_config'
 
-target 'FServices' do
-  # Pods for FServices
+target 'Workalu' do
+  # Pods for Workalu
 
   # TODO: remove after RN >=0.60
   react_native_path = "../node_modules/react-native"
@@ -51,7 +51,7 @@ target 'FServices' do
   # pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   # pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'FServicesTests' do
+  target 'WorkaluTests' do
     inherit! :search_paths
     # Pods for testing
   end
@@ -60,10 +60,10 @@ target 'FServices' do
   use_native_modules!
 end
 
-target 'FServices-tvOS' do
-  # Pods for FServices-tvOS
+target 'Workalu-tvOS' do
+  # Pods for Workalu-tvOS
 
-  target 'FServices-tvOSTests' do
+  target 'Workalu-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

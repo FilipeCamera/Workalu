@@ -99,7 +99,7 @@ export default function Home() {
         <Icon name="add" size={24} color="#FFF" />
       </ButtonCadastro>
       <FooterBox>
-        <FooterText>2020 | FServices |</FooterText>
+        <FooterText>2020 | Workalu |</FooterText>
         <ButtonSac onPress={(e) => {
           e.preventDefault();
           navigation.navigate('Sac');

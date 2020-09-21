@@ -1,4 +1,4 @@
-package com.flcamera.fservices;
+package com.flcamera.workalu;
 
 import android.app.Application;
 
