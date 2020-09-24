@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import {
   Container,
@@ -17,12 +17,13 @@ export default function Modal({ visible, setVisible, email }) {
     <Container visible={visible} animationType="fade">
       <Box>
         <Title>Passo a Passo</Title>
-        <Desc>1- Você irá colocar no assunto do email = FServices Vaga.</Desc>
+        <Desc>1- Verificar se o email é correspondente a empresa</Desc>
+        <Desc>2- Você irá colocar no assunto do email = Workalu Vaga.</Desc>
         <Desc>
-          2- No corpo do email: Nome Completo, Idade, CPF e Currículo em PDF.
+          3- No corpo do email: Nome Completo, Idade, CPF e Currículo em PDF.
         </Desc>
         <Desc>
-          3- Copie o email abaixo.
+          4- Copie o email abaixo.
         </Desc>
         <Email value={email} defaultValue={email} />
         <Button onPress={() => setVisible(false)}>
