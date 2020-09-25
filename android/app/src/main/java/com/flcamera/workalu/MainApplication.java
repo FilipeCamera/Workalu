@@ -27,7 +27,6 @@ public class MainApplication extends MultiDexApplication implements ReactApplica
       @SuppressWarnings("UnnecessaryLocalVariable")
       List<ReactPackage> packages = new PackageList(this).getPackages();
       // additional non auto detected packages can still be added here:
-      // packages.add(new SomeReactNativePackage());
       return packages;
     }
 

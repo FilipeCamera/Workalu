@@ -60,4 +60,4 @@ buck-out/
 
 
 #Android Outputs
-/android/app/build/outputs
+/android/app/build

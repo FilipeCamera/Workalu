@@ -17,11 +17,13 @@ import {
   TextQuantCadastros,
   TextCadastros,
   ButtonSac,
+  LogoImg,
+  Img,
 } from './styles';
 
-import LogoIcon from '../../assets/logoWhite.svg';
-import Team from '../../assets/team.svg';
-import Help from '../../assets/help.svg';
+import LogoIcon from '../../assets/logoWhite.png';
+import Team from '../../assets/team.png';
+import Help from '../../assets/help.png';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import IconSac from 'react-native-vector-icons/AntDesign';
@@ -51,7 +53,7 @@ export default function Home() {
       contentContainerStyle={{ flexGrow: 1 }}
     >
       <Logo>
-        <LogoIcon />
+        <LogoImg source={LogoIcon}/>
       </Logo>
       <TextLogo>Seja Bem-Vindo,</TextLogo>
       <DescLogo>
@@ -66,7 +68,7 @@ export default function Home() {
       >
         <ServiceText>Pesquisar por serviços e freelancers</ServiceText>
         <HelpBox>
-          <Help />
+          <Img  source={Help}/>
         </HelpBox>
       </ButtonService>
       <ButtonEmprego
@@ -77,7 +79,7 @@ export default function Home() {
       >
         <EmpregoText>Pesquisar por vagas de empregos</EmpregoText>
         <HelpBox>
-          <Team />
+          <Img source={Team} />
         </HelpBox>
       </ButtonEmprego>
       <BoxCadastros>

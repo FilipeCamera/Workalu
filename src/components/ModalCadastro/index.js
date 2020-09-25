@@ -24,7 +24,7 @@ export default function ModalCadastro({
         {completeRegister === true ? (
           <Desc>Cadastro feito com sucesso!</Desc>
         ) : (
-          <ShowIndicator size="large" color="#416CD9" />
+          <ShowIndicator size="large" color="#E44545" />
         )}
         <Button
           onPress={() => {

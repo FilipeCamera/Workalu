@@ -9,7 +9,9 @@ export const Container = styled.ScrollView`
 `;
 
 export const Logo = styled.View`
-  margin: 25px 0 0 20px;
+  margin: 30px 0 0 20px;
+  width: 150px;
+  height: 60px;
 `;
 
 export const TextLogo = styled.Text`
@@ -40,6 +42,8 @@ export const ButtonService = styled.TouchableOpacity`
 `;
 export const HelpBox = styled.View`
   margin-left: -5px;
+  width: 80px;
+  height: 80px;
 `;
 
 export const ServiceText = styled.Text`
@@ -119,4 +123,19 @@ export const FooterText = styled.Text`
 
 export const ButtonSac = styled.TouchableOpacity`
   padding: 5px;
+`;
+
+export const BoxLogoImg = styled.View`
+  width: 140px;
+  height: 50px;
+`;
+
+export const LogoImg = styled.Image`
+  width: 100%;
+  height: 100%;
+`;
+
+export const Img = styled.Image`
+  width: 95%;
+  height: 95%;
 `;
