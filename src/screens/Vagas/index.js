@@ -57,7 +57,7 @@ export default function Vagas() {
   const [dataFilter, setDataFilter] = useState([]);
 
   const interstitial = InterstitialAd.createForAdRequest(
-    'ca-app-pub-4288571417280592/8187388340',
+    'ca-app-pub-4288571417280592/7045024619',
     {
       requestNonPersonalizedAdsOnly: true,
     }
@@ -247,7 +247,7 @@ export default function Vagas() {
       </Scroll>
       <BannerView>
         <BannerAd
-          unitId="ca-app-pub-4288571417280592/1018526521"
+          unitId="ca-app-pub-4288571417280592/4063638057"
           size={BannerAdSize.FULL_BANNER}
           requestOptions={{
             requestNonPersonalizedAdsOnly: true,

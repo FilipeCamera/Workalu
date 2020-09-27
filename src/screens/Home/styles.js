@@ -41,7 +41,7 @@ export const ButtonService = styled.TouchableOpacity`
   margin: 50px auto 25px;
 `;
 export const HelpBox = styled.View`
-  margin-left: -5px;
+  margin-left: ${width > 360 ? '-2px' : '-5px'};
   width: 80px;
   height: 80px;
 `;

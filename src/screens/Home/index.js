@@ -25,6 +25,8 @@ import LogoIcon from '../../assets/logoWhite.png';
 import Team from '../../assets/team.png';
 import Help from '../../assets/help.png';
 
+import { Alert } from 'react-native';
+
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import IconSac from 'react-native-vector-icons/AntDesign';
 
@@ -53,7 +55,7 @@ export default function Home() {
       contentContainerStyle={{ flexGrow: 1 }}
     >
       <Logo>
-        <LogoImg source={LogoIcon}/>
+        <LogoImg source={LogoIcon} />
       </Logo>
       <TextLogo>Seja Bem-Vindo,</TextLogo>
       <DescLogo>
@@ -63,21 +65,31 @@ export default function Home() {
       <ButtonService
         onPress={(e) => {
           e.preventDefault();
-          navigation.navigate('Servicos');
+          if (totalS == 0) {
+            return Alert.alert(
+              'Nenhum serviço ou freela cadastrado! Seja o primeiro.'
+            );
+          } else {
+            navigation.navigate('Servicos');
+          }
         }}
       >
         <ServiceText>Pesquisar por serviços e freelancers</ServiceText>
         <HelpBox>
-          <Img  source={Help}/>
+          <Img source={Help} />
         </HelpBox>
       </ButtonService>
       <ButtonEmprego
         onPress={(e) => {
           e.preventDefault();
-          navigation.navigate('Vagas');
+          if (totalV == 0) {
+            return Alert.alert('Nenhuma vaga cadastrada! Seja o primeiro.');
+          } else {
+            navigation.navigate('Vagas');
+          }
         }}
       >
-        <EmpregoText>Pesquisar por vagas de empregos</EmpregoText>
+        <EmpregoText>Pesquisar por ofertas de empregos</EmpregoText>
         <HelpBox>
           <Img source={Team} />
         </HelpBox>
@@ -90,7 +102,7 @@ export default function Home() {
       </BoxCadastros>
       <BoxCadastros>
         <TextQuantCadastros>{totalV}</TextQuantCadastros>
-        <TextCadastros>vagas cadastrados na nossa plataforma</TextCadastros>
+        <TextCadastros>ofertas de empregos cadastrados na nossa plataforma</TextCadastros>
       </BoxCadastros>
       <ButtonCadastro
         onPress={(e) => {
@@ -102,10 +114,12 @@ export default function Home() {
       </ButtonCadastro>
       <FooterBox>
         <FooterText>2020 | Workalu |</FooterText>
-        <ButtonSac onPress={(e) => {
-          e.preventDefault();
-          navigation.navigate('Sac');
-        }}>
+        <ButtonSac
+          onPress={(e) => {
+            e.preventDefault();
+            navigation.navigate('Sac');
+          }}
+        >
           <IconSac name="customerservice" size={25} color="#0A2B33" />
         </ButtonSac>
       </FooterBox>
