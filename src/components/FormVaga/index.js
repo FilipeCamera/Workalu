@@ -141,7 +141,7 @@ export default function FormVaga() {
         placeholder="Email para envio de currículo / contato"
         onChangeText={(e) => setEmail(e)}
       />
-      <Label>Tags:</Label>
+      <Label>Palavras-chaves:</Label>
       <Tags
         style={{ width: '90%', marginTop: 5 }}
         initialText=""

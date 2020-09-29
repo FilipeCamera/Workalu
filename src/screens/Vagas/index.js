@@ -49,6 +49,7 @@ import Modal from '../../components/Modal';
 export default function Vagas() {
   const [modalVisible, setModalVisible] = useState(false);
   const [visibleM, setVisibleM] = useState(false);
+  const [nomeVaga, setNomeVaga] = useState('');
   const [categoria, setCategoria] = useState('');
   const [uf, setUf] = useState('');
   const [endereco, setEndereco] = useState('');
@@ -121,9 +122,9 @@ export default function Vagas() {
     );
   }
 
-  function filterData(categoria, uf, endereco) {
+  function filterData(nomeVaga, categoria, uf, endereco) {
     const newData = data.filter((obj) => {
-      if (categoria == '' && endereco == '' && uf == '') {
+      if (categoria == '' && nomeVaga == '' && endereco == '' && uf == '') {
         return obj.categoria.toLowerCase() != categoria.toLowerCase();
       }
       if (
@@ -137,10 +138,49 @@ export default function Vagas() {
             obj.uf.toLowerCase() == uf.toLowerCase())
         );
       }
+      if (endereco != '' && uf != '') {
+        return (
+          obj.cidade.toLowerCase() == endereco.toLowerCase() &&
+          obj.uf.toLowerCase() == uf.toLowerCase()
+        );
+      }
+      if(nomeVaga != '' && categoria != '' && endereco != ''){
+        return(
+          obj.nomeVaga.toLowerCase() == nomeVaga.toLowerCase() &&
+          obj.categoria.toLowerCase() == categoria.toLowerCase() &&
+          obj.cidade.toLowerCase() == endereco.toLowerCase()
+        )
+      }
+      if(nomeVaga != '' && categoria != '' && uf != ''){
+        return(
+          obj.nomeVaga.toLowerCase() == nomeVaga.toLowerCase() &&
+          obj.categoria.toLowerCase() == categoria.toLowerCase() &&
+          obj.uf.toLowerCase() == uf.toLowerCase()
+        )
+      }
+      if(nomeVaga != '' && categoria != ''){
+        return(
+          obj.nomeVaga.toLowerCase() == nomeVaga.toLowerCase() &&
+          obj.categoria.toLowerCase() == categoria.toLowerCase()
+        )
+      }
+      if(nomeVaga != '' && endereco != ''){
+        return(
+          obj.nomeVaga.toLowerCase() == nomeVaga.toLowerCase() &&
+          obj.cidade.toLowerCase() == endereco.toLowerCase()
+        )
+      }
+      if(nomeVaga != '' && uf != ''){
+        return(
+          obj.nomeVaga.toLowerCase() == nomeVaga.toLowerCase() &&
+          obj.uf.toLowerCase() == uf.toLowerCase()
+        )
+      }
       return (
         obj.categoria.toLowerCase() == categoria.toLowerCase() ||
         obj.cidade.toLowerCase() == endereco.toLowerCase() ||
-        obj.uf.toLowerCase() == uf.toLowerCase()
+        obj.uf.toLowerCase() == uf.toLowerCase() ||
+        obj.nomeVaga.toLowerCase() == nomeVaga.toLowerCase()
       );
     });
     setDataFilter(newData);
@@ -151,10 +191,12 @@ export default function Vagas() {
       <ModalFilterVaga
         categoria={categoria}
         setCategoria={setCategoria}
+        nomeVaga={nomeVaga}
         uf={uf}
         setUf={setUf}
         endereco={endereco}
         setEndereco={setEndereco}
+        setNomeVaga={setNomeVaga}
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
         filterData={filterData}
@@ -200,6 +242,9 @@ export default function Vagas() {
             <TagsTitle>{categoria}</TagsTitle>
           </BoxTags>
           <BoxTags>
+            <TagsTitle>{nomeVaga}</TagsTitle>
+          </BoxTags>
+          <BoxTags>
             <TagsTitle>{endereco}</TagsTitle>
           </BoxTags>
           <BoxTags>
@@ -235,7 +280,11 @@ export default function Vagas() {
                   })}
                 </CardBoxTags>
                 <ButtonWhats onPress={() => setVisibleM(true)}>
-                  <Modal visible={visibleM} setVisible={setVisibleM} email={item.email}/>
+                  <Modal
+                    visible={visibleM}
+                    setVisible={setVisibleM}
+                    email={item.email}
+                  />
                   <TextWhats>Estou Interessado</TextWhats>
                 </ButtonWhats>
               </BoxCard>

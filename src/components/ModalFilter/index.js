@@ -14,11 +14,13 @@ import {
 import { Picker } from '@react-native-community/picker';
 
 export default function ModalFilter({
+  nomeServico,
   categoria,
   uf,
   endereco,
   modalVisible,
   setModalVisible,
+  setNomeServico,
   setCategoria,
   setEndereco,
   setUf,
@@ -63,6 +65,12 @@ export default function ModalFilter({
           />
           <Picker.Item label="Outros" value="Outros" />
         </Picker>
+        <InputEndereco
+            value={nomeServico}
+            placeholder="Nome do Serviço"
+            style={{width: '90%', marginTop: 10}}
+            onChangeText={(e) => setNomeServico(e)}
+          />
         <BoxEndereco>
           <InputEndereco
             value={endereco}
@@ -114,7 +122,7 @@ export default function ModalFilter({
           <Button
             onPress={() => {
               setModalVisible(false);
-              filterData(categoria, uf, endereco);
+              filterData(nomeServico, categoria, uf, endereco);
             }}
           >
             <ButtonText>Ok</ButtonText>

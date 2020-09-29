@@ -50,6 +50,7 @@ import Header from '../../components/Header';
 export default function Servicos() {
   const [modalVisible, setModalVisible] = useState(false);
   const [categoria, setCategoria] = useState('');
+  const [nomeServico, setNomeServico] = useState('');
   const [uf, setUf] = useState('');
   const [endereco, setEndereco] = useState('');
   const [textSearch, setTextSearch] = useState('');
@@ -123,9 +124,9 @@ export default function Servicos() {
     );
   }
 
-  function filterData(categoria, uf, endereco) {
+  function filterData(nomeServico, categoria, uf, endereco) {
     const newData = data.filter((obj) => {
-      if (categoria == '' && endereco == '' && uf == '') {
+      if (categoria == '' && nomeServico == '' && endereco == '' && uf == '') {
         return obj.categoria.toLowerCase() != categoria.toLowerCase();
       }
       if (
@@ -139,10 +140,41 @@ export default function Servicos() {
             obj.uf.toLowerCase() == uf.toLowerCase())
         );
       }
+      if (endereco != '' && uf != '') {
+        return (
+          obj.cidade.toLowerCase() == endereco.toLowerCase() &&
+          obj.uf.toLowerCase() == uf.toLowerCase()
+        );
+      }
+      if (nomeServico != '' && categoria != '' && endereco != '') {
+        return (
+          obj.nomeServico.toLowerCase() == nomeServico.toLowerCase() &&
+          obj.categoria.toLowerCase() == categoria.toLowerCase() &&
+          obj.cidade.toLowerCase() == endereco.toLowerCase()
+        );
+      }
+      if (nomeServico != '' && categoria != '') {
+        return (
+          obj.nomeServico.toLowerCase() == nomeServico.toLowerCase() &&
+          obj.categoria.toLowerCase() == categoria.toLowerCase()
+        );
+      }
+      if (
+        (nomeServico != '' && endereco != '') ||
+        (nomeServico != '' && uf != '')
+      ) {
+        return (
+          (obj.nomeServico.toLowerCase() == nomeServico.toLowerCase() &&
+            obj.cidade.toLowerCase() == endereco.toLowerCase()) ||
+          (obj.nomeServico.toLowerCase() == nomeServico.toLowerCase() &&
+            obj.uf.toLowerCase() == uf.toLowerCase())
+        );
+      }
       return (
         obj.categoria.toLowerCase() == categoria.toLowerCase() ||
         obj.cidade.toLowerCase() == endereco.toLowerCase() ||
-        obj.uf.toLowerCase() == uf.toLowerCase()
+        obj.uf.toLowerCase() == uf.toLowerCase() ||
+        obj.nomeServico.toLowerCase() == nomeServico.toLowerCase()
       );
     });
     setDataFilter(newData);
@@ -153,6 +185,8 @@ export default function Servicos() {
       <ModalFilter
         categoria={categoria}
         setCategoria={setCategoria}
+        nomeServico={nomeServico}
+        setNomeServico={setNomeServico}
         uf={uf}
         setUf={setUf}
         endereco={endereco}
@@ -200,6 +234,9 @@ export default function Servicos() {
         <BoxTagsFilter>
           <BoxTags>
             <TagsTitle>{categoria}</TagsTitle>
+          </BoxTags>
+          <BoxTags>
+            <TagsTitle>{nomeServico}</TagsTitle>
           </BoxTags>
           <BoxTags>
             <TagsTitle>{endereco}</TagsTitle>

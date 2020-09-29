@@ -124,7 +124,7 @@ export default function FormServico() {
         onChangeText={(e) => setWhatsapp(e)}
         keyboardType="numeric"
       />
-      <Label>Tags:</Label>
+      <Label>Palavras-chaves:</Label>
       <Tags
         style={{ width: '90%',marginTop: 5 }}
         initialText=""

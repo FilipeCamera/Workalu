@@ -14,11 +14,13 @@ import {
 import { Picker } from '@react-native-community/picker';
 
 export default function ModalFilterVaga({
+  nomeVaga,
   categoria,
   uf,
   endereco,
   modalVisible,
   setModalVisible,
+  setNomeVaga,
   setCategoria,
   setEndereco,
   setUf,
@@ -78,6 +80,12 @@ export default function ModalFilterVaga({
           />
           <Picker.Item label="Serviços Sociais" value="Serviços Sociais" />
         </Picker>
+        <InputEndereco
+          value={nomeVaga}
+          placeholder="Nome da Vaga"
+          style={{width: '90%', marginTop: 10}}
+          onChangeText={(e) => setNomeVaga(e)}
+        />
         <BoxEndereco>
           <InputEndereco
             value={endereco}
@@ -129,13 +137,13 @@ export default function ModalFilterVaga({
           <Button
             onPress={() => {
               setModalVisible(false);
-              filterData(categoria, uf, endereco);
+              filterData(nomeVaga, categoria, uf, endereco);
             }}
           >
             <ButtonText>Ok</ButtonText>
           </Button>
           <Button
-            style={{ backgroundColor: '#CC3E3E'}}
+            style={{ backgroundColor: '#CC3E3E' }}
             onPress={() => {
               setModalVisible(false);
             }}
