@@ -23,16 +23,25 @@ export const Desc = styled.Text`
   width: 90%;
 `;
 
-export const Email = styled.TextInput`
+export const Email = styled.View`
   width: 90%;
   height: 60px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10px;
   background: #C3DFE5;
   text-align: center;
-  font-family: 'Cairo-SemiBold';
-  font-size: 15px;
-  color: #155766;
   margin: 20px 0;
 `;
+
+export const EmailText = styled.Text`
+  font-family: 'Cairo-SemiBold';
+  font-size: 16px;
+  color: #0A2B33;
+`;
+
+export const ButtonClip = styled.TouchableOpacity``;
 
 export const Button = styled.TouchableOpacity`
   margin: 20px 0 0;

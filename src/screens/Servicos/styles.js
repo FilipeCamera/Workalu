@@ -167,3 +167,18 @@ export const TagsFilterButton = styled.TouchableOpacity`
 export const ShowIndicator = styled.ActivityIndicator`
   margin: 60px 0 0;
 `;
+export const CardInstagram = styled.View`
+  width: 90%;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const TextInsta = styled.Text`
+  font-family: 'Cairo-SemiBold';
+  font-size: 15px;
+  color: #0A2B33;
+`;
+
+export const InstaButton = styled.TouchableOpacity`
+  margin-left: 5px;
+`;

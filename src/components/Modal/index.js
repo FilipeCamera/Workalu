@@ -8,11 +8,17 @@ import {
   Email,
   Button,
   ButtonText,
+  EmailText,
+  ButtonClip,
 } from './styles';
 
+import Clipboard from '@react-native-community/clipboard';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default function Modal({ visible, setVisible, email }) {
-  
+  function CopyClip(email) {
+    Clipboard.setString(email);
+  }
   return (
     <Container visible={visible} animationType="fade">
       <Box>
@@ -22,10 +28,13 @@ export default function Modal({ visible, setVisible, email }) {
         <Desc>
           3- No corpo do email: Nome Completo, Idade, CPF e Currículo em PDF.
         </Desc>
-        <Desc>
-          4- Copie o email abaixo.
-        </Desc>
-        <Email value={email} defaultValue={email} />
+        <Desc>4- Copie o email abaixo.</Desc>
+        <Email>
+          <EmailText>{email}</EmailText>
+          <ButtonClip onPress={() => CopyClip(email)}>
+            <Icon name="content-copy" size={20} color='#0A2B33'/>
+          </ButtonClip>
+        </Email>
         <Button onPress={() => setVisible(false)}>
           <ButtonText>Confirmar</ButtonText>
         </Button>

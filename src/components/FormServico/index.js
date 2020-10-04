@@ -31,6 +31,7 @@ export default function FormServico() {
   const [nome, setNome] = useState('');
   const [nomeServico, setNomeServico] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
+  const [instagram, setInstagram] = useState('');
   const [valorInicial, setValorInitial] = useState('');
   const [valorFinal, setValorFinal] = useState('');
   const [cidade, setCidade] = useState('');
@@ -45,6 +46,7 @@ export default function FormServico() {
     setNome('');
     setNomeServico('');
     setWhatsapp('');
+    setInstagram('');
     setTagsData([]);
     setValorInitial('');
     setValorFinal('');
@@ -57,6 +59,7 @@ export default function FormServico() {
       nome: nome,
       nomeServico: nomeServico,
       whatsapp: whatsapp,
+      instagram: instagram,
       tagsData: tagsData,
       valorInicial: valorInicial,
       valorFinal: valorFinal,
@@ -124,9 +127,15 @@ export default function FormServico() {
         onChangeText={(e) => setWhatsapp(e)}
         keyboardType="numeric"
       />
+      <Label>Rede social:</Label>
+      <Input
+        value={instagram}
+        placeholder="Instagram (opcional)"
+        onChangeText={(e) => setInstagram(e)}
+      />
       <Label>Palavras-chaves:</Label>
       <Tags
-        style={{ width: '90%',marginTop: 5 }}
+        style={{ width: '90%', marginTop: 5 }}
         initialText=""
         textInputProps={{
           placeholder: 'Diga a sua experiência',
@@ -183,6 +192,7 @@ export default function FormServico() {
           selectedValue={uf}
           onValueChange={(itemValue, itemIndex) => setUf(itemValue)}
         >
+          <Picker.Item label="--" value="" />
           <Picker.Item label="RO" value="RO" />
           <Picker.Item label="AC" value="AC" />
           <Picker.Item label="AM" value="AM" />

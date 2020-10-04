@@ -26,6 +26,9 @@ import {
   TextWhats,
   BoxTagsFilter,
   ShowIndicator,
+  CardInstagram,
+  TextInsta,
+  InstaButton
 } from './styles';
 
 import ModalFilter from '../../components/ModalFilter';
@@ -82,6 +85,7 @@ export default function Servicos() {
             nome,
             nomeServico,
             whatsapp,
+            instagram,
             tagsData,
             valorInicial,
             valorFinal,
@@ -94,6 +98,7 @@ export default function Servicos() {
             nome,
             nomeServico,
             whatsapp,
+            instagram,
             tagsData,
             valorInicial,
             valorFinal,
@@ -266,6 +271,14 @@ export default function Servicos() {
                     {item.cidade}, {item.uf}
                   </LocationDesc>
                 </CardBoxLocation>
+                <CardInstagram>
+                  <Icon2 name='instagram' size={22} color='#0A2B33'/>
+                  <InstaButton onPress={() => {
+                    Linking.openURL(`instagram://user?username=${item.instagram}`)
+                  }}>
+                    <TextInsta>@{item.instagram}</TextInsta>
+                  </InstaButton>
+                </CardInstagram>
                 <CardBoxTags>
                   {item.tagsData.map((item, index) => {
                     return (

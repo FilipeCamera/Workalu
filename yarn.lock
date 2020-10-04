@@ -1076,6 +1076,11 @@
     sudo-prompt "^9.0.0"
     wcwidth "^1.0.1"
 
+"@react-native-community/clipboard@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@react-native-community/clipboard/-/clipboard-1.3.0.tgz#9aec68e39403c936288db8bf73d1980b9f908cc4"
+  integrity sha512-HshaSOfKwfrgc5V4sl2/enFXru8650wF3LNGOd9c+B8xFAJGtr2O6W139nsGIc7iUngIx2lQfD2E7sDoDZysHw==
+
 "@react-native-community/eslint-config@^0.0.3":
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@react-native-community/eslint-config/-/eslint-config-0.0.3.tgz#bf9be8434caa18f85b570cf4e28366f2a7f1ea91"
