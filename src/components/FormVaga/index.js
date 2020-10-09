@@ -104,10 +104,6 @@ export default function FormVaga() {
           label="Comunicação - Marketing"
           value="Comunicação - Marketing"
         />
-        <Picker.Item
-          label="Agricultura, Pecuária e Veterinária"
-          value="Agricultura, Pecuária e Veterinária"
-        />
         <Picker.Item label="Engenharia" value="Engenharia" />
         <Picker.Item label="Industrial" value="Industrial" />
         <Picker.Item label="Jurídica" value="Jurídica" />
@@ -185,6 +181,7 @@ export default function FormVaga() {
           selectedValue={uf}
           onValueChange={(itemValue, itemIndex) => setUf(itemValue)}
         >
+          <Picker.Item label="" value="--" />
           <Picker.Item label="RO" value="RO" />
           <Picker.Item label="AC" value="AC" />
           <Picker.Item label="AM" value="AM" />

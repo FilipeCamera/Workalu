@@ -5,7 +5,7 @@ import Header from '../../components/Header';
 import { Container, Title, Label } from './styles';
 
 import { Picker } from '@react-native-community/picker';
-import { FormExcluirDados, FormDificuldade, FormFeedBack } from '../../components/FormSac';
+import { FormExcluirDados, FormDificuldade, FormFeedBack, FormEditarDados } from '../../components/FormSac';
 
 export default function Sac() {
   const [categoria, setCategoria] = useState(null);
@@ -39,10 +39,12 @@ export default function Sac() {
           value="Dificuldade em cadastrar"
         />
         <Picker.Item label="Feedback" value="Feedback" />
+        <Picker.Item label="Editar Dados" value="Editar Dados"/>
       </Picker>
       {categoria == 'Excluir seus dados' ? <FormExcluirDados /> : null}
       {categoria == 'Dificuldade em cadastrar' ? <FormDificuldade/> : null}
       {categoria == 'Feedback' ? <FormFeedBack/> : null}
+      {categoria == 'Editar Dados' ? <FormEditarDados/> : null}
     </Container>
   );
 }

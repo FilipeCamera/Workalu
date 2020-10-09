@@ -152,7 +152,96 @@ export function FormFeedBack() {
             database()
               .ref(`/feedback/${id}`)
               .set({
-                feedback
+                feedback,
+              })
+              .then(() => Alert.alert('Enviado com sucesso!'));
+          }
+        }}
+      >
+        <ButtonText>Enviar</ButtonText>
+      </Button>
+    </Container>
+  );
+}
+
+export function FormEditarDados() {
+  const [categoria, setCategoria] = useState(null);
+  const [nome, setNome] = useState('');
+  const [nomeServicoVaga, setNomeServicoVaga] = useState('');
+  const [whatsEmail, setWhatsEmail] = useState('');
+  const [editarDados, setEditar] = useState('');
+  return (
+    <Container>
+      <Label>Dados:</Label>
+      <Picker
+        style={{
+          height: 60,
+          width: '90%',
+          color: '#0A2B33',
+          backgroundColor: '#C3DFE5',
+        }}
+        selectedValue={categoria}
+        mode="dropdown"
+        onValueChange={(itemValue, itemIndex) => setCategoria(itemValue)}
+      >
+        <Picker.Item label="Selecione..." value="" />
+        <Picker.Item label="Serviços" value="Serviços" />
+        <Picker.Item label="Vagas de empregos" value="Vagas de empregos" />
+      </Picker>
+      <Input value={nome} placeholder="Nome" onChangeText={(e) => setNome(e)} />
+      {categoria == 'Serviços' ? (
+        <Input
+          value={nomeServicoVaga}
+          placeholder="Nome do serviço"
+          onChangeText={(e) => setNomeServicoVaga(e)}
+        />
+      ) : (
+        <Input
+          value={nomeServicoVaga}
+          placeholder="Nome da vaga de emprego"
+          onChangeText={(e) => setNomeServicoVaga(e)}
+        />
+      )}
+      {categoria == 'Serviços' ? (
+        <Input
+          value={whatsEmail}
+          placeholder="Whatsapp"
+          keyboardType="number-pad"
+          onChangeText={(e) => setWhatsEmail(e)}
+        />
+      ) : (
+        <Input
+          value={whatsEmail}
+          placeholder="Email"
+          onChangeText={(e) => setWhatsEmail(e)}
+        />
+      )}
+      <Input
+        value={editarDados}
+        placeholder='Diga o que você quer editar'
+        multiline={true}
+        maxLength={500}
+        style={{ textAlignVertical: 'top', height: 160 }}
+        onChangeText={(e) => setEditar(e)}
+      />
+      <Button
+        onPress={() => {
+          if (
+            categoria == '' ||
+            nome == '' ||
+            nomeServicoVaga == '' ||
+            whatsEmail == ''
+          ) {
+            return Alert.alert('Preencher todos os formulários!');
+          } else {
+            database()
+              .ref(`/excluir_dados/${id}`)
+              .set({
+                categoria,
+                nome,
+                nomeServicoVaga,
+                whatsEmail,
+                editarDados,
               })
               .then(() => Alert.alert('Enviado com sucesso!'));
           }
