@@ -103,6 +103,7 @@ export default function FormServico() {
         <Picker.Item label="Moda e Beleza" value="Moda e Beleza" />
         <Picker.Item label="Serviços Domésticos" value="Serviços Domésticos" />
         <Picker.Item label="Serviços Locais" value="Serviços Locais" />
+        <Picker.Item label="Saúde" value="Saúde" />
         <Picker.Item label="Transporte e Frete" value="Transporte e Frete" />
 
         <Picker.Item
