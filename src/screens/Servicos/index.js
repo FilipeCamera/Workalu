@@ -133,54 +133,78 @@ export default function Servicos() {
     const newData = data.filter((obj) => {
       if (categoria == '' && nomeServico == '' && endereco == '' && uf == '') {
         return obj.categoria.toLowerCase() != categoria.toLowerCase();
-      }
-      if (
-        (categoria != '' && endereco != '') ||
-        (categoria != '' && uf != '')
-      ) {
+      }else if ( categoria != '' && nomeServico == '' && endereco == '' && uf == '' ) {
+        return obj.categoria.toLowerCase() == categoria.toLowerCase();
+      }else if (categoria != '' && nomeServico != '' && endereco == '' && uf == '' ) {
+        return (obj.categoria.toLowerCase() == categoria.toLowerCase() &&
+                obj.nomeServico.toLowerCase() == nomeServico.toLowerCase()
+        );
+      }else if (categoria != '' && nomeServico == '' && endereco != '' && uf == '') {
         return (
-          (obj.categoria.toLowerCase() == categoria.toLowerCase() &&
-            obj.cidade.toLowerCase() == endereco.toLowerCase()) ||
-          (obj.categoria.toLowerCase() == categoria.toLowerCase() &&
-            obj.uf.toLowerCase() == uf.toLowerCase())
+          obj.categoria.toLowerCase() == categoria.toLowerCase() &&
+          obj.cidade.toLowerCase() == endereco.toLowerCase()       
+        );
+      }else if (categoria != '' && nomeServico == '' && endereco == '' && uf != '') {
+        return (
+          obj.categoria.toLowerCase() == categoria.toLowerCase() &&
+          obj.uf.toLowerCase() == uf.toLowerCase()       
+        );
+      }else if (categoria != '' && nomeServico == '' && endereco != '' && uf != '') {
+        return (
+          obj.categoria.toLowerCase() == categoria.toLowerCase() &&
+          obj.cidade.toLowerCase() == endereco.toLowerCase() &&
+          obj.uf.toLowerCase() == uf.toLowerCase()       
         );
       }
-      if (endereco != '' && uf != '') {
+      
+      else if (categoria != '' && nomeServico != '' && endereco != '' && uf == '') {
+        return (
+          obj.categoria.toLowerCase() == categoria.toLowerCase() &&
+          obj.nomeServico.toLowerCase() == nomeServico.toLowerCase() &&
+          obj.cidade.toLowerCase() == endereco.toLowerCase()
+        );
+      }else if (categoria != '' && nomeServico != '' && endereco == '' && uf != '') {
+        return (
+          obj.categoria.toLowerCase() == categoria.toLowerCase() &&
+          obj.nomeServico.toLowerCase() == nomeServico.toLowerCase() &&
+          obj.uf.toLowerCase() == uf.toLowerCase()
+        );
+      }else if (categoria != '' && nomeServico != '' && endereco != '' && uf != '') {
+        return (
+          obj.categoria.toLowerCase() == categoria.toLowerCase() &&
+          obj.nomeServico.toLowerCase() == nomeServico.toLowerCase() &&
+          obj.cidade.toLowerCase() == endereco.toLowerCase() &&
+          obj.uf.toLowerCase() == uf.toLowerCase()          
+        );
+      }else if (categoria == '' && nomeServico != '' && endereco == '' && uf == ''){
+        return obj.nomeServico.toLowerCase() == nomeServico.toLowerCase()
+      }else if (categoria == '' && nomeServico != '' && endereco != '' && uf == ''){
+        return (
+          obj.nomeServico.toLowerCase() == nomeServico.toLowerCase()  && 
+          obj.cidade.toLowerCase() == endereco.toLowerCase()
+        );  
+      }else if (categoria == '' && nomeServico != '' && endereco == '' && uf != ''){
+        return (
+          obj.nomeServico.toLowerCase() == nomeServico.toLowerCase()  && 
+          obj.uf.toLowerCase() == uf.toLowerCase()
+        );  
+      }else if (categoria == '' && nomeServico != '' && endereco != '' && uf != ''){
+        return (
+          obj.nomeServico.toLowerCase() == nomeServico.toLowerCase()  && 
+          obj.cidade.toLowerCase() == endereco.toLowerCase() &&
+          obj.uf.toLowerCase() == uf.toLowerCase()
+        );
+      }else if (categoria == '' && nomeServico == '' && endereco != '' && uf == ''){
+        return obj.cidade.toLowerCase() == endereco.toLowerCase()
+      }else if (categoria == '' && nomeServico == '' && endereco == '' && uf != ''){
+        return obj.uf.toLowerCase() == uf.toLowerCase()
+      }else if (categoria == '' && nomeServico == '' && endereco != '' && uf != ''){
         return (
           obj.cidade.toLowerCase() == endereco.toLowerCase() &&
           obj.uf.toLowerCase() == uf.toLowerCase()
         );
       }
-      if (nomeServico != '' && categoria != '' && endereco != '') {
-        return (
-          obj.nomeServico.toLowerCase() == nomeServico.toLowerCase() &&
-          obj.categoria.toLowerCase() == categoria.toLowerCase() &&
-          obj.cidade.toLowerCase() == endereco.toLowerCase()
-        );
-      }
-      if (nomeServico != '' && categoria != '') {
-        return (
-          obj.nomeServico.toLowerCase() == nomeServico.toLowerCase() &&
-          obj.categoria.toLowerCase() == categoria.toLowerCase()
-        );
-      }
-      if (
-        (nomeServico != '' && endereco != '') ||
-        (nomeServico != '' && uf != '')
-      ) {
-        return (
-          (obj.nomeServico.toLowerCase() == nomeServico.toLowerCase() &&
-            obj.cidade.toLowerCase() == endereco.toLowerCase()) ||
-          (obj.nomeServico.toLowerCase() == nomeServico.toLowerCase() &&
-            obj.uf.toLowerCase() == uf.toLowerCase())
-        );
-      }
-      return (
-        obj.categoria.toLowerCase() == categoria.toLowerCase() ||
-        obj.cidade.toLowerCase() == endereco.toLowerCase() ||
-        obj.uf.toLowerCase() == uf.toLowerCase() ||
-        obj.nomeServico.toLowerCase() == nomeServico.toLowerCase()
-      );
+          
     });
     setDataFilter(newData);
   }
