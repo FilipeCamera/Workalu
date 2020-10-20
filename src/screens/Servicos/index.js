@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 import {
   Container,
@@ -28,12 +28,12 @@ import {
   ShowIndicator,
   CardInstagram,
   TextInsta,
-  InstaButton
-} from './styles';
+  InstaButton,
+} from "./styles";
 
-import ModalFilter from '../../components/ModalFilter';
+import ModalFilter from "../../components/ModalFilter";
 
-import firestore from '@react-native-firebase/firestore';
+import firestore from "@react-native-firebase/firestore";
 
 import admob, {
   MaxAdContentRating,
@@ -41,33 +41,33 @@ import admob, {
   BannerAdSize,
   InterstitialAd,
   AdEventType,
-} from '@react-native-firebase/admob';
+} from "@react-native-firebase/admob";
 
-import { Linking } from 'react-native';
+import { Linking } from "react-native";
 
-import Icon from 'react-native-vector-icons/AntDesign';
-import Icon2 from 'react-native-vector-icons/FontAwesome';
+import Icon from "react-native-vector-icons/AntDesign";
+import Icon2 from "react-native-vector-icons/FontAwesome";
 
-import Header from '../../components/Header';
+import Header from "../../components/Header";
 
 export default function Servicos() {
   const [modalVisible, setModalVisible] = useState(false);
-  const [categoria, setCategoria] = useState('');
-  const [nomeServico, setNomeServico] = useState('');
-  const [uf, setUf] = useState('');
-  const [endereco, setEndereco] = useState('');
-  const [textSearch, setTextSearch] = useState('');
+  const [categoria, setCategoria] = useState("");
+  const [nomeServico, setNomeServico] = useState("");
+  const [uf, setUf] = useState("");
+  const [endereco, setEndereco] = useState("");
+  const [textSearch, setTextSearch] = useState("");
   const [data, setData] = useState([]);
   const [dataFilter, setDataFilter] = useState([]);
 
   const interstitial = InterstitialAd.createForAdRequest(
-    'ca-app-pub-4288571417280592/7045024619',
+    "ca-app-pub-4288571417280592/7045024619",
     {
       requestNonPersonalizedAdsOnly: true,
     }
   );
 
-  const doc = firestore().collection('servicos');
+  const doc = firestore().collection("servicos");
 
   useEffect(() => {
     interstitial.load();
@@ -131,80 +131,153 @@ export default function Servicos() {
 
   function filterData(nomeServico, categoria, uf, endereco) {
     const newData = data.filter((obj) => {
-      if (categoria == '' && nomeServico == '' && endereco == '' && uf == '') {
+      if (categoria == "" && nomeServico == "" && endereco == "" && uf == "") {
         return obj.categoria.toLowerCase() != categoria.toLowerCase();
-      }else if ( categoria != '' && nomeServico == '' && endereco == '' && uf == '' ) {
+      } else if (
+        categoria != "" &&
+        nomeServico == "" &&
+        endereco == "" &&
+        uf == ""
+      ) {
         return obj.categoria.toLowerCase() == categoria.toLowerCase();
-      }else if (categoria != '' && nomeServico != '' && endereco == '' && uf == '' ) {
-        return (obj.categoria.toLowerCase() == categoria.toLowerCase() &&
-                obj.nomeServico.toLowerCase() == nomeServico.toLowerCase()
-        );
-      }else if (categoria != '' && nomeServico == '' && endereco != '' && uf == '') {
+      } else if (
+        categoria != "" &&
+        nomeServico != "" &&
+        endereco == "" &&
+        uf == ""
+      ) {
         return (
           obj.categoria.toLowerCase() == categoria.toLowerCase() &&
-          obj.cidade.toLowerCase() == endereco.toLowerCase()       
+          obj.nomeServico.toLowerCase() == nomeServico.toLowerCase()
         );
-      }else if (categoria != '' && nomeServico == '' && endereco == '' && uf != '') {
+      } else if (
+        categoria != "" &&
+        nomeServico == "" &&
+        endereco != "" &&
+        uf == ""
+      ) {
         return (
           obj.categoria.toLowerCase() == categoria.toLowerCase() &&
-          obj.uf.toLowerCase() == uf.toLowerCase()       
+          obj.cidade.toLowerCase() == endereco.toLowerCase()
         );
-      }else if (categoria != '' && nomeServico == '' && endereco != '' && uf != '') {
+      } else if (
+        categoria != "" &&
+        nomeServico == "" &&
+        endereco == "" &&
+        uf != ""
+      ) {
+        return (
+          obj.categoria.toLowerCase() == categoria.toLowerCase() &&
+          obj.uf.toLowerCase() == uf.toLowerCase()
+        );
+      } else if (
+        categoria != "" &&
+        nomeServico == "" &&
+        endereco != "" &&
+        uf != ""
+      ) {
         return (
           obj.categoria.toLowerCase() == categoria.toLowerCase() &&
           obj.cidade.toLowerCase() == endereco.toLowerCase() &&
-          obj.uf.toLowerCase() == uf.toLowerCase()       
+          obj.uf.toLowerCase() == uf.toLowerCase()
         );
-      }
-      
-      else if (categoria != '' && nomeServico != '' && endereco != '' && uf == '') {
+      } else if (
+        categoria != "" &&
+        nomeServico != "" &&
+        endereco != "" &&
+        uf == ""
+      ) {
         return (
           obj.categoria.toLowerCase() == categoria.toLowerCase() &&
           obj.nomeServico.toLowerCase() == nomeServico.toLowerCase() &&
           obj.cidade.toLowerCase() == endereco.toLowerCase()
         );
-      }else if (categoria != '' && nomeServico != '' && endereco == '' && uf != '') {
+      } else if (
+        categoria != "" &&
+        nomeServico != "" &&
+        endereco == "" &&
+        uf != ""
+      ) {
         return (
           obj.categoria.toLowerCase() == categoria.toLowerCase() &&
           obj.nomeServico.toLowerCase() == nomeServico.toLowerCase() &&
           obj.uf.toLowerCase() == uf.toLowerCase()
         );
-      }else if (categoria != '' && nomeServico != '' && endereco != '' && uf != '') {
+      } else if (
+        categoria != "" &&
+        nomeServico != "" &&
+        endereco != "" &&
+        uf != ""
+      ) {
         return (
           obj.categoria.toLowerCase() == categoria.toLowerCase() &&
           obj.nomeServico.toLowerCase() == nomeServico.toLowerCase() &&
           obj.cidade.toLowerCase() == endereco.toLowerCase() &&
-          obj.uf.toLowerCase() == uf.toLowerCase()          
+          obj.uf.toLowerCase() == uf.toLowerCase()
         );
-      }else if (categoria == '' && nomeServico != '' && endereco == '' && uf == ''){
-        return obj.nomeServico.toLowerCase() == nomeServico.toLowerCase()
-      }else if (categoria == '' && nomeServico != '' && endereco != '' && uf == ''){
+      } else if (
+        categoria == "" &&
+        nomeServico != "" &&
+        endereco == "" &&
+        uf == ""
+      ) {
+        return obj.nomeServico.toLowerCase() == nomeServico.toLowerCase();
+      } else if (
+        categoria == "" &&
+        nomeServico != "" &&
+        endereco != "" &&
+        uf == ""
+      ) {
         return (
-          obj.nomeServico.toLowerCase() == nomeServico.toLowerCase()  && 
+          obj.nomeServico.toLowerCase() == nomeServico.toLowerCase() &&
           obj.cidade.toLowerCase() == endereco.toLowerCase()
-        );  
-      }else if (categoria == '' && nomeServico != '' && endereco == '' && uf != ''){
+        );
+      } else if (
+        categoria == "" &&
+        nomeServico != "" &&
+        endereco == "" &&
+        uf != ""
+      ) {
         return (
-          obj.nomeServico.toLowerCase() == nomeServico.toLowerCase()  && 
+          obj.nomeServico.toLowerCase() == nomeServico.toLowerCase() &&
           obj.uf.toLowerCase() == uf.toLowerCase()
-        );  
-      }else if (categoria == '' && nomeServico != '' && endereco != '' && uf != ''){
+        );
+      } else if (
+        categoria == "" &&
+        nomeServico != "" &&
+        endereco != "" &&
+        uf != ""
+      ) {
         return (
-          obj.nomeServico.toLowerCase() == nomeServico.toLowerCase()  && 
+          obj.nomeServico.toLowerCase() == nomeServico.toLowerCase() &&
           obj.cidade.toLowerCase() == endereco.toLowerCase() &&
           obj.uf.toLowerCase() == uf.toLowerCase()
         );
-      }else if (categoria == '' && nomeServico == '' && endereco != '' && uf == ''){
-        return obj.cidade.toLowerCase() == endereco.toLowerCase()
-      }else if (categoria == '' && nomeServico == '' && endereco == '' && uf != ''){
-        return obj.uf.toLowerCase() == uf.toLowerCase()
-      }else if (categoria == '' && nomeServico == '' && endereco != '' && uf != ''){
+      } else if (
+        categoria == "" &&
+        nomeServico == "" &&
+        endereco != "" &&
+        uf == ""
+      ) {
+        return obj.cidade.toLowerCase() == endereco.toLowerCase();
+      } else if (
+        categoria == "" &&
+        nomeServico == "" &&
+        endereco == "" &&
+        uf != ""
+      ) {
+        return obj.uf.toLowerCase() == uf.toLowerCase();
+      } else if (
+        categoria == "" &&
+        nomeServico == "" &&
+        endereco != "" &&
+        uf != ""
+      ) {
         return (
           obj.cidade.toLowerCase() == endereco.toLowerCase() &&
           obj.uf.toLowerCase() == uf.toLowerCase()
         );
       }
-          
     });
     setDataFilter(newData);
   }
@@ -227,8 +300,8 @@ export default function Servicos() {
       <Scroll
         contentContainerStyle={{
           flexGrow: 1,
-          backgroundColor: '#0A2B33',
-          alignItems: 'center',
+          backgroundColor: "#0A2B33",
+          alignItems: "center",
           paddingBottom: 10,
         }}
         showsVerticalScrollIndicator={false}
@@ -251,8 +324,8 @@ export default function Servicos() {
               }}
               clearTextOnFocus={true}
               onFocus={() => {
-                setTextSearch('');
-                search('');
+                setTextSearch("");
+                search("");
               }}
             />
           </SearchBar>
@@ -296,10 +369,14 @@ export default function Servicos() {
                   </LocationDesc>
                 </CardBoxLocation>
                 <CardInstagram>
-                  <Icon2 name='instagram' size={22} color='#0A2B33'/>
-                  <InstaButton onPress={() => {
-                    Linking.openURL(`instagram://user?username=${item.instagram}`)
-                  }}>
+                  <Icon2 name="instagram" size={22} color="#0A2B33" />
+                  <InstaButton
+                    onPress={() => {
+                      Linking.openURL(
+                        `instagram://user?username=${item.instagram}`
+                      );
+                    }}
+                  >
                     <TextInsta>@{item.instagram}</TextInsta>
                   </InstaButton>
                 </CardInstagram>

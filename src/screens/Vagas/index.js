@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 import {
   Container,
@@ -26,11 +26,11 @@ import {
   CardDesc,
   DescTitle,
   Desc,
-} from './styles';
+} from "./styles";
 
-import ModalFilterVaga from '../../components/ModalFilterVaga';
+import ModalFilterVaga from "../../components/ModalFilterVaga";
 
-import firestore from '@react-native-firebase/firestore';
+import firestore from "@react-native-firebase/firestore";
 
 import admob, {
   MaxAdContentRating,
@@ -38,33 +38,33 @@ import admob, {
   BannerAdSize,
   InterstitialAd,
   AdEventType,
-} from '@react-native-firebase/admob';
+} from "@react-native-firebase/admob";
 
-import Icon from 'react-native-vector-icons/AntDesign';
+import Icon from "react-native-vector-icons/AntDesign";
 
-import Header from '../../components/Header';
+import Header from "../../components/Header";
 
-import Modal from '../../components/Modal';
+import Modal from "../../components/Modal";
 
 export default function Vagas() {
   const [modalVisible, setModalVisible] = useState(false);
   const [visibleM, setVisibleM] = useState(false);
-  const [nomeVaga, setNomeVaga] = useState('');
-  const [categoria, setCategoria] = useState('');
-  const [uf, setUf] = useState('');
-  const [endereco, setEndereco] = useState('');
-  const [textSearch, setTextSearch] = useState('');
+  const [nomeVaga, setNomeVaga] = useState("");
+  const [categoria, setCategoria] = useState("");
+  const [uf, setUf] = useState("");
+  const [endereco, setEndereco] = useState("");
+  const [textSearch, setTextSearch] = useState("");
   const [data, setData] = useState([]);
   const [dataFilter, setDataFilter] = useState([]);
 
   const interstitial = InterstitialAd.createForAdRequest(
-    'ca-app-pub-4288571417280592/7045024619',
+    "ca-app-pub-4288571417280592/7045024619",
     {
       requestNonPersonalizedAdsOnly: true,
     }
   );
 
-  const doc = firestore().collection('vagas');
+  const doc = firestore().collection("vagas");
 
   useEffect(() => {
     interstitial.load();
@@ -124,12 +124,11 @@ export default function Vagas() {
 
   function filterData(nomeVaga, categoria, uf, endereco) {
     const newData = data.filter((obj) => {
-      if (categoria == '' && nomeVaga == '' && endereco == '' && uf == '') {
+      if (categoria == "" && nomeVaga == "" && endereco == "" && uf == "") {
         return obj.categoria.toLowerCase() != categoria.toLowerCase();
-      }
-      if (
-        (categoria != '' && endereco != '') ||
-        (categoria != '' && uf != '')
+      } else if (
+        (categoria != "" && endereco != "") ||
+        (categoria != "" && uf != "")
       ) {
         return (
           (obj.categoria.toLowerCase() == categoria.toLowerCase() &&
@@ -137,44 +136,38 @@ export default function Vagas() {
           (obj.categoria.toLowerCase() == categoria.toLowerCase() &&
             obj.uf.toLowerCase() == uf.toLowerCase())
         );
-      }
-      if (endereco != '' && uf != '') {
+      } else if (endereco != "" && uf != "") {
         return (
           obj.cidade.toLowerCase() == endereco.toLowerCase() &&
           obj.uf.toLowerCase() == uf.toLowerCase()
         );
-      }
-      if(nomeVaga != '' && categoria != '' && endereco != ''){
-        return(
+      } else if (nomeVaga != "" && categoria != "" && endereco != "") {
+        return (
           obj.nomeVaga.toLowerCase() == nomeVaga.toLowerCase() &&
           obj.categoria.toLowerCase() == categoria.toLowerCase() &&
           obj.cidade.toLowerCase() == endereco.toLowerCase()
-        )
-      }
-      if(nomeVaga != '' && categoria != '' && uf != ''){
-        return(
+        );
+      } else if (nomeVaga != "" && categoria != "" && uf != "") {
+        return (
           obj.nomeVaga.toLowerCase() == nomeVaga.toLowerCase() &&
           obj.categoria.toLowerCase() == categoria.toLowerCase() &&
           obj.uf.toLowerCase() == uf.toLowerCase()
-        )
-      }
-      if(nomeVaga != '' && categoria != ''){
-        return(
+        );
+      } else if (nomeVaga != "" && categoria != "") {
+        return (
           obj.nomeVaga.toLowerCase() == nomeVaga.toLowerCase() &&
           obj.categoria.toLowerCase() == categoria.toLowerCase()
-        )
-      }
-      if(nomeVaga != '' && endereco != ''){
-        return(
+        );
+      } else if (nomeVaga != "" && endereco != "") {
+        return (
           obj.nomeVaga.toLowerCase() == nomeVaga.toLowerCase() &&
           obj.cidade.toLowerCase() == endereco.toLowerCase()
-        )
-      }
-      if(nomeVaga != '' && uf != ''){
-        return(
+        );
+      } else if (nomeVaga != "" && uf != "") {
+        return (
           obj.nomeVaga.toLowerCase() == nomeVaga.toLowerCase() &&
           obj.uf.toLowerCase() == uf.toLowerCase()
-        )
+        );
       }
       return (
         obj.categoria.toLowerCase() == categoria.toLowerCase() ||
@@ -204,8 +197,8 @@ export default function Vagas() {
       <Scroll
         contentContainerStyle={{
           flexGrow: 1,
-          backgroundColor: '#0A2B33',
-          alignItems: 'center',
+          backgroundColor: "#0A2B33",
+          alignItems: "center",
           paddingBottom: 10,
         }}
         showsVerticalScrollIndicator={false}
@@ -228,8 +221,8 @@ export default function Vagas() {
               }}
               clearTextOnFocus={true}
               onFocus={() => {
-                setTextSearch('');
-                search('');
+                setTextSearch("");
+                search("");
               }}
             />
           </SearchBar>
